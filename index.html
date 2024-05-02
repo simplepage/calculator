@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .main{display:flex;justify-content:center;gap:100px;}
+         .a1{height:600px;width:500px;}
+         .p1{color:red;font-size:20px;}
+
+            table{height:600px;width:500px;border-collapse:collapse;border:Green 2px solid;}
+            input[type=button]{height:100%;width:100%;background-color:aqua;color:red;font-size:40px;border-radius:20px;}
+            input[type=button]:hover{background-color:blueviolet;color:white;}
+            input[type=text]{height:100%;width:99%;font-size:40px;color:red;border-radius:10px;background-color:aquamarine;}
+
+
+            @media only screen and (max-width:1060px){
+                .main{gap:50px;}
+                .a1{height:500px;width:400px;}
+                .p1{font-size:15px;}
+                table{height:500px;width:400px;}
+                input[type=button]{font-size:25px;}
+                input[type=text]{font-size:25px;}
+            }
+
+            @media only screen and (max-width:769px){
+                .main{display:block;}
+                .a1{height:600px;width:500px;margin:auto;}
+                .p1{font-size:20px;}
+                table{height:600px;width:500px;}
+                input[type=button]{font-size:40px;}
+                input[type=text]{font-size:40px;}
+            }
+
+            @media only screen and (max-width:426px){
+                .main{display:block;}
+                .a1{height:500px;width:350px;}
+                .p1{font-size:15px;}
+                table{height:500px;width:350px;}
+                input[type=button]{font-size:20px;}
+                input[type=text]{font-size:20px;width:98%;}
+            }
+
+
+    </style>
+</head>
+<body>
+    <script>
+        function JS(value){document.getElementById("v").value+=value;}
+        function AC(){document.getElementById("v").value="";}
+        function CAL(){var a=document.getElementById("v").value;
+                       var b=eval(a);
+                       document.getElementById("v").value=b;}      
+        function POW(){var xy=document.getElementById("v").value;     //pow
+                        document.getElementById("v").value=Math.pow(xy,2);}
+        function SQRT(){var mn=document.getElementById("v").value;     //sqrt
+                        document.getElementById("v").value=Math.sqrt(mn);}
+        function FACT(){var pq=document.getElementById("v").value;      //factorial
+                        var fact=1;
+                        for(var i=1;i<=pq;i++){
+                        fact=fact*i;
+                                    }
+                        document.getElementById("v").value=fact;
+                                    }
+        function LOG(){var ab=document.getElementById("v").value;   //log
+                        document.getElementById("v").value=Math.log10(ab);}
+    </script>
+    <div class="main">
+    <div class="a1">
+         <p class="p1">Calculator:<br>A calculator is a device that performs arithmetic operations on numbers.You input numbers and operations using the buttons, and it quickly calculates and displays the result on the screen.</p>
+         <p class="p1">Advantage of calculator:
+            <ul class="p1">
+                <li>Fast Math:&nbsp;Calculators help you do math quickly.</li>
+                <li>No Mistakes:&nbsp;They make sure your math is correct.</li>
+                <li>Lots of Functions:&nbsp;They can do lots of different types of math.</li>
+                <li>Help You Learn:&nbsp;They make learning math easier by doing the hard work for you.</li>
+            </ul>
+         </p>
+         <p class="p1">Facilities in this calculator:
+            <ul class="p1">
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+                <li>Square</li>
+                <li>Square root</li>
+                <li>Factorial</li>
+                <li>logarithm</li>
+            </ul>
+         </p>
+    </div>
+    <div class="a1">
+        <form>
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id="v" placeholder="Enter number"></td>
+                <td><input type="button" value="Ac" onclick="AC()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="JS('1')"></td>
+                <td><input type="button" value="2" onclick="JS('2')"></td>
+                <td><input type="button" value="3" onclick="JS('3')"></td>
+                <td><input type="button" value="/" onclick="JS('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="JS('4')"></td>
+                <td><input type="button" value="5" onclick="JS('5')"></td>
+                <td><input type="button" value="6" onclick="JS('6')"></td>
+                <td><input type="button" value="*" onclick="JS('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="JS('7')"></td>
+                <td><input type="button" value="8" onclick="JS('8')"></td>
+                <td><input type="button" value="9" onclick="JS('9')"></td>
+                <td><input type="button" value="+" onclick="JS('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="JS('0')"></td>
+                <td><input type="button" value="." onclick="JS('.')"></td>
+                <td><input type="button" value="=" onclick="CAL()"></td>
+                <td><input type="button" value="-" onclick="JS('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="X²" onclick="POW()"></td>
+                <td><input type="button" value="√X" onclick="SQRT()"></td>
+                <td><input type="button" value="X!" onclick="FACT()"></td>
+                <td><input type="button" value="log" onclick="LOG()"></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
